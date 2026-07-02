@@ -2395,17 +2395,6 @@ export class BaileysStartupService extends ChannelStartupService {
           // group?.participants,
         );
       } else {
-        contextInfo = {
-          mentionedJid: [],
-          groupMentions: [],
-          //expiration: 7776000,
-          ephemeralSettingTimestamp: {
-            low: Math.floor(Date.now() / 1000) - 172800,
-            high: 0,
-            unsigned: false,
-          },
-          disappearingMode: { initiator: 0 },
-        };
         messageSent = await this.sendMessage(
           sender,
           message,
@@ -2414,7 +2403,7 @@ export class BaileysStartupService extends ChannelStartupService {
           quoted,
           null,
           undefined,
-          contextInfo,
+          undefined,
         );
       }
 
